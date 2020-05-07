@@ -9,3 +9,17 @@
 * Does not use alerts, confirms or prompts (look into _modals_)*** popup 
 
 name: fusion entertainment
+
+
+as a busy perfesional I want to be able to be updated on entertainment news in one place so I can be aware of 
+current topics going on today.
+
+as a borded college student I want to set asside time to stay updated with current topics in the entertainment world.
+
+as a trivia buff i want to stay up to date with current events.
+
+as a musicaian I want to listen to and learn new songs.
+
+https://www.ytroulette.com/
+https://random-ize.com/random-youtube/
+https://stackoverflow.com/questions/22128689/javascript-random-youtube-video-autoplay
