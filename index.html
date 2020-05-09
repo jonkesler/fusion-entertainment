@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Fusion Entertainment!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   
@@ -53,36 +53,45 @@
         </p>
         <div class="panel-block">
           <p class="control has-icons-left">
-            <input class="input is-primary" type="text" placeholder="Search">
+            <input class="input is-primary" type="text" id="search-input" placeholder="Search">
             <span class="icon is-left">
-              <i class="fas fa-search" aria-hidden="true"></i>
+              <p class="buttons">
+                <button class="button" type="submit" value="Submit input" id="run-search">
+                  <span class="icon is-small">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </button>
             </span>
           </p>
         </div>
-        <a class="panel-block is-active">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          bulma
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          marksheet
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          minireset.css
-        </a>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          jgthms.github.io
-        </a>
+        <!-- removed active flag from 1st block -->
+        <!-- added panel body to hold past searches -->
+        <div class="panel-body" id="past-searches">
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            bulma
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            marksheet
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            minireset.css
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            jgthms.github.io
+          </a>
+      </div>
       </article>
 ​
       <!-- end 1st column -->
@@ -93,7 +102,7 @@
 ​
 <!-- Right side card -->
 <div class="card">
-    <div class="card-content">
+    <div class="card-content" id="random">
       <p class="title">
         “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
       </p>
@@ -218,6 +227,37 @@
       jgthms.github.io
     </a>
   </article>
+          <!-- Music Results -->
+          <article class="panel is-primary">
+            <p class="panel-heading">
+              News Search Results
+            </p>
+            <!-- remove is-active -->
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              bulma
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              marksheet
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              minireset.css
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              jgthms.github.io
+            </a>
+          </article>
 </div>
     </div>
 ​
@@ -236,7 +276,16 @@
       </p>
     </div>
   </footer>
+  <!-- link up jquery and add google same site warning work around-->
+  <!-- https://stackoverflow.com/questions/58441115/setting-samesite-none-secure-in-chrome-extension -->
+  <!-- doesn't seem to be helping with google error - probably remove integrity and cross  -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <!-- add all 3 script files -->
+  <script src="./mScript.js"></script>
+  <script src="./nScript.js"></script>
   <script src="./vScript.js"></script>
-  <script src="./script.js"></script>
   </body>
 </html>
