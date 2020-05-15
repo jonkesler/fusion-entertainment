@@ -54,13 +54,14 @@ var yArray = [];
 //      document.getElementById('response').innerHTML = responseString;
 //     }
 
-//     // calls the function search
+   // calls the function search
 $("#run-search").on("click", function (event) {
   event.preventDefault();
   console.log("click");
   var query = document.getElementById('search-input').value;
   console.log(query)
   const YOUTUBE_API_KEY = "AIzaSyDT1ZkdDlIXjPydNnmcu2-7okZn4tR7QHA";
+  //const YOUTUBE_API_KEY = "AIzaSyDiFKZ__ewItVbTWGjSUu8AMCtowyAawyY";
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=${query}&key=${YOUTUBE_API_KEY}`;
   console.log(url);
   fetch(url)
