@@ -9,7 +9,9 @@ function onYouTubeApiLoad() {
 // Called when the search button is clicked in the html code
 function search() {
     var query = document.getElementById('query').value;
-     search.list() API call
+nScript
+    //  search.list() API call
+
      var request = gapi.client.youtube.search.list({
        part: 'snippet',
        q:query
@@ -23,12 +25,10 @@ function searchByKeyword() {
   }
     // .then(function(response) {
     //     console.log(response.json());
-    });
-    // Send the request to the API server, call the onSearchResponse function when the data is returned
-    request.execute(onSearchResponse);
-}
+nScript
+
+
 function onSearchResponse(response) {
      var responseString = JSON.stringify(response, '', 2);
      document.getElementById('response').innerHTML = responseString;
     };
-

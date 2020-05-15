@@ -1,59 +1,61 @@
-var APIkey = "80d515d314d8402bb02b5d41c84b4972";
+var nAPIkey = "80d515d314d8402bb02b5d41c84b4972";
 
 var today = new Date();
 var date = +today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var search = 12;
-var searchCount = 12;
+// number of results from localStorage
+var searchCount = 4;
+// number of results from rArray
+var nCount = 4;
+// search input
+// var iText = "";
+// tim had breana add .value
 var searchInput = document.querySelector("#search-input");
+var pSearches = document.querySelectorAll("#past-searches"); 
+var nIcon = document.querySelector("#search-input");
+var nResult = document.querySelector("#search-result");
+// local storage
 var qInput = localStorage.getItem("queryInput");
-
+// Search Input Array
 var sInput = [];
+// Results Array
+var rArray = [];
 
-// random api call
-// ============================================
-var url = 'http://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-        //   'apiKey=80d515d314d8402bb02b5d41c84b4972';
-          'apiKey=' + APIkey;
-var req = new Request(url);
-    fetch(req)
-    .then(function(response) {
-    console.log(response.json());
-    })
+// calls local storage
+init();
+
+function renderLastSearches(){
+  // Clear search-list element and update past searches
+   pSearches.innerHTML = "";
+    console.log("renderLastSearches");
+  // Render a past tag for each searched term
+  for (var i = 0; i < searchCount; i++) {
+    var lSearch = sInput[i];
+    console.log(lSearch + "lSearch");
+
+    // $("panel-icon").html("<svg><use xlink:href="#delete"></use></svg>");
+        // $("panel-icon").innerHTML("<i class="far fa-newspaper" aria-hidden="true"></i>");
+    // .iClass('fa-angle-right');
+
+    $(".past" + (i + 1)).html(lSearch);
+    
+    // i.setAttribute("class", "far fa-newspaper");
+    // panelBlock.appendChild();
+  }
+}
 
 
-    function renderLastSearches(){
-        // Clear search-list element and update todoCountSpan
-    //    pastSearches.innerHTML = "";
-       
-        // Render a new ul for each searched city
-       for (var i = 0; i < searchCount; i++) {
-         var lSearch = sInput[i];
-         console.log(lSearch + " lSearch");
-         var a = document.createElement("a");
-         a.textContent = lSearch;
-         a.setAttribute("data-index", i);
-         a.setAttribute("class", "panel-block");
-     
-     
-         // li.appendChild(button);
-         searchList.appendChild(a);
-         // console.log("qCity" + qCity);
-       }
-     }
-
-// Set files to HTML
+// Set files to HTML - first called 
 // ============================================
 function init() {
     // Get stored input from localStorage
     // Parsing the JSON string to an object
-    var storedInput = JSON.parse(localStorage.getItem("searchInput"));
+    var storedInput = JSON.parse(localStorage.getItem("sInput"));
   
-    // If searchs were retrieved from localStorage, update the todos array to it
+    // If search terms were retrieved from localStorage, update the todos array to it
     if (storedInput !== null) {
       sInput = storedInput;
     }
-  console.log(sInput + "sInput")
     // Render Input to the DOM
     renderLastSearches();
   }
@@ -64,32 +66,59 @@ function init() {
     
     // keyword api search
     // ============================================
-        var url = 'http://newsapi.org/v2/everything?' +
+    // added n to url because it seemed to effect url in rscript
+        var nUrl = 'http://newsapi.org/v2/everything?' +
         // populate q with search term
-        'q=' + searchInput + '&' +
+        'q=' + searchInput.value + '&' +
         // populate from with current month
         'from=' + date + '&' +
         // sorts by popularity
         'sortBy=popularity&' +
-        // 'apiKey=80d515d314d8402bb02b5d41c84b4972';
-        'apiKey=' + APIkey;
+        'apiKey=' + nAPIkey;
 
-        var req = new Request(url);
+        var req = new Request(nUrl);
 
-        fetch(req)
+        fetch(nUrl)
+        .then(function(response){
+        return response.json();
+        })
         .then(function(response) {
-        console.log(response.json() + " Json Response");
+          nArray = response;
+          console.log("nArray",nArray.articles[1].title);
+// ***not working.  Something to do with promise
+          console.log(nArray , "nArray");
         })
 
-        .then(function(response) {
+        .then(function() {
   
-          console.log(url);
-        //   console.log(response.json() + "response");
-          console.log(sInput + " sInput");
+          console.log(nUrl +"url");
+          // console.log(response);
+          console.log(sInput + " sInput API");
         //   console.log("searchInput " + searchInput);
 //   writing to HTML
-
-  });
+        // creates panel and lists results
+        // ============================================
+        nResult.innerHTML = "";
+        for (var j = 0; j < nCount; j++) {
+          var nTitle = (nArray.articles[j].title);
+          var nDesc = (nArray.articles[j].description);
+          var nrUrl = (nArray.articles[j].url);
+          console.log(nTitle + "nTitle");
+          console.log(nrUrl + " nrUrl");
+          // console.log("===============");
+          // $("panel-icon").html("<svg><use xlink:href="#delete"></use></svg>");
+          // .iClass('fa-angle-right');
+          // iClass.appendChild("<i class="fa-angle-right" aria-hidden="true"></i>");
+      
+          $(".n" + (j + 1)).html(nTitle);
+          var p2 = "<p>paragraph 2</p>";
+          $(p2).insertAfter(".n" + (j + 1));
+          // $(".n" + (j + 1)).setAttribute("a href", "nrUrl");
+          // document.getElementById((".n" + (j + 1))).href = "nrUrl";
+          // $(".n" + (j + 1).sourceText).append('<i class="fa-angle-right" aria-hidden="true"></i>');
+          // $(".n" + (j + 1)).html(nrUrl);
+  };
+})
 }
   // Store search Input
   function storeInput(){
@@ -108,14 +137,16 @@ function init() {
     var queryURL = buildQueryURL();
 //    makes sure search is not blank
     var  iValue = searchInput.value;
+    // var  iValue = searchInput;
     if (iValue === ""){
       return;
     }
     sInput.unshift(iValue);
+    console.log(searchInput.value + " searchInput");
     searchInput.value = "";
   
     storeInput();
-    // renderLastInput();
+    renderLastSearches();
   })
   
 
