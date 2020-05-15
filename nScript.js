@@ -111,8 +111,20 @@ function init() {
           // iClass.appendChild("<i class="fa-angle-right" aria-hidden="true"></i>");
       
           $(".n" + (j + 1)).html(nTitle);
-          var p2 = "<p>paragraph 2</p>";
-          $(p2).insertAfter(".n" + (j + 1));
+          // var p2 = "<p>paragraph 2</p>";
+          // $(p2).insertAfter(".n" + (j + 1));
+          var letterBtn = $("<button>");
+        // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
+        letterBtn.addClass("letter-button letter letter-button-color");
+
+        // 4. Then give each "letterBtn" a data-attribute called "data-letter".
+        letterBtn.attr("data-letter", letters[i]);
+
+        // 5. Then give each "letterBtns" a text equal to "letters[i]".
+        letterBtn.text(letters[i]);
+
+        // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
+        $("#buttons").append(letterBtn);
           // $(".n" + (j + 1)).setAttribute("a href", "nrUrl");
           // document.getElementById((".n" + (j + 1))).href = "nrUrl";
           // $(".n" + (j + 1).sourceText).append('<i class="fa-angle-right" aria-hidden="true"></i>');
@@ -131,7 +143,12 @@ function init() {
   // .on("click") function associated with the Search Button
 // ******Need to figure out the ID for the search
   $("#run-search").on("click", function(event) {
-    event.preventDefault();
+    event.preventDef
+    
+    
+    
+    
+    ault();
     console.log("Click");
     // Build the query URL
     var queryURL = buildQueryURL();
