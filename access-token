@@ -1,0 +1,11 @@
+ https://accounts.spotify.com/authorize?client_id=cc1702d374a44257b438ec22a451bd53&scopes=playlist-read-private&response_type=code&redirect_uri=https%3A%2F%2Fwww.youtube.com%2F
+
+ curl -H "Authorization: Basic Y2MxNzAyZDM3NGE0NDI1N2I0MzhlYzIyYTQ1MWJkNTM6N2QxMGU2ZjI5NjAwNGZlOTkxZjc3YjVmN2I1N2UxNjQ=" -d grant_type=authorization_code -d code=AQDVjvBXwWRp57Bup7gOZ8Zk2wImWIWZDwkPDOX5CxGpv-OmEzo4rDYaB9cI3KSJ7uLt1mH1S38Fr5C5G-6b0Puwe8GtIEzEkcbpFOrzPvYB5aN_xVJFngUDGJZOnN44VbCvLfHROaecVaUbtCa3e_nLAohfBO5e0zS-4ZCezz-wlIIu93SY1zNS1LXYUg -d redirect_uri=https%3A%2F%2Fwww.youtube.com%2F https://accounts.spotify.com/api/token
+
+ "access_token":"BQDxwtqDzkEHA1laCBN1oUMnXga-BYEjIbRLQt_qPo9uwuwP5G9mt_hXHy5ubMClbS2_lHQwEdZ2x5WZ029_bxcUJK6ZsB_ajzKeYYFWzXVbmIMv6dmntt6PZQ1AEL5NixvOIXFaXM0noHMNKw","token_type":"Bearer","expires_in":3600,"refresh_token":"AQD-eQ8TH0_Lj-Ksdr0jb5zQqiokM02rwAFR_kVKSxMCavStcd99m7JdimRuI88JFl0QkzPxCT4HA43bQ42nuRsLB54-9IJGiB_k_Oo0vH4nmmS51Dp2JiKFMdhWhpmNVm8","scope":""
+
+ "https://api.spotify.com/v1/search?q=" "&type=song&limit=4" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQBSycTpYHk0XpMNEGTYJP07sc2juSpflJX0vvc37IQUEXarmjalCMMRTLJEGaajXI6tYfGl-4UK6lmVyl7AduGYrIe6iBCsZfuuiF5s84-D0_zYc_KWLloK8WJ0PDSpk-bQmaMNokABdMNLou8vAsw"
+
+AQDPJq_q5IHAxN31B1ECcMpaLC3UDvs9Ea_a-iFetcn-e9ROdjNWSP-t8HIK9YetjtUVRyKIpJyc_WXwadoDz-iv0h4n8ECGToa-eOcpG6WGvYkPlv4GfYLj4P7i1mkFiO_YD0y7REgTNO2bccszK_snbeYBt3WW9J8nWRHKHcf5ARI_3v4-ZlxAvvNhqw
+
+curl -H "Authorization: Basic Y2MxNzAyZDM3NGE0NDI1N2I0MzhlYzIyYTQ1MWJkNTM6N2QxMGU2ZjI5NjAwNGZlOTkxZjc3YjVmN2I1N2UxNjQ=" -d grant_type=authorization_code -d code= -d redirect_uri=https%3A%2F%2Fwww.youtube.com%2F https://accounts.spotify.com/api/token
