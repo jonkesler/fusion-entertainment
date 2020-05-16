@@ -10,6 +10,7 @@
     <!--youtube api script tag-->
     <!-- <script src="search.js" type="text/javascript"></script>         -->
     <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+
 </head>
   <body>
 <!--Youtube running a search-->
@@ -17,6 +18,8 @@
     <!-- <input id="query" value='cats' type="text"/>
     <button onclick="search()">Search</button>
     <pre id="response"></pre> -->
+
+
   <section class="section">
     <div class="container">
     <!-- create columns for others to nest in -->
@@ -29,6 +32,8 @@
       <p class="subtitle">
         Your first stop for all of your <strong>Entertainment</strong>!
       </p>
+​
+​
       <!-- create columns -->
       <div class="columns">
         <div class="column is-two-fifths">
@@ -39,9 +44,10 @@
           Entertainment Search
         </p>
         <p class="panel-tabs">
-          <div class="buttons">
-            <button class="button is-primary is-light is-active">Random</button>
-            <button class="button is-info is-light">Video</button>
+​
+          <div class="button" type="submit" value="Submit" id="active">
+            <button class="button is-primary is-light">Random</button>
+            <button class="button is-info is-light is-active">Video</button>
             <button class="button is-success is-light">Music</button>
             <button class="button is-warning is-light">News</button>
           </div>
@@ -86,34 +92,62 @@
             </span>
             <div class="past4"> </div>
           </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <!-- <i class="fas fa-book" aria-hidden="true"></i> -->
+            </span>
+            <div class="past5"> </div>
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <!-- <i class="fas fa-book" aria-hidden="true"></i> -->
+            </span>
+            <div class="past6"> </div>
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <!-- <i class="fas fa-book" aria-hidden="true"></i> -->
+            </span>
+            <div class="past7"> </div>
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <!-- <i class="fas fa-book" aria-hidden="true"></i> -->
+            </span>
+            <div class="past8"> </div>
+          </a>
       </div>
       </article>
 ​
       <!-- end 1st column -->
     </div>
+​
       <!-- add 2nd column -->
       <div class="column">
+​
 <!-- Right side card -->
 <div class="card">
     <div class="card-content" id="random">
-      <p class="title">
+      <!-- <p class="title">
         “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
       </p>
       <p class="subtitle">
         Jeff Atwood
-      </p>
+      </p> -->
+
 <!-- Iframe -->
 <section id="skills" class="site-wrap" tabindex="2">
   <div class="write-section">
     <h4 class="">Random Programming Video</h4>
       <div class="write-container">
-        <iframe width="100%" height="600px" class="youtubeVideo">
+        <iframe width="100%" height="350px" class="youtubeVideo">
       </iframe>
         <!-- youTube video --> 
       </div>
    </div>
 </section>
 <!-- end Iframe -->
+
     </div>
     <footer class="card-footer">
       <p class="card-footer-item">
@@ -130,9 +164,11 @@
   </div>
   <!-- end second column -->
 </div>
+​
 <!-- end nested column -->
 </div>
 </div>
+​
     </div>
     
 <!-- Bottom results pane -->
@@ -141,29 +177,29 @@
         <p class="panel-heading">
           video Search Results
         </p>
-        <a class="panel-block">
+        <a class="panel-block" id="vResult">
           <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </span>
-          bulma
+          <div class="v1"></div>
         </a>
         <a class="panel-block">
           <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </span>
-          marksheet
+          <div class="v2"></div>
         </a>
         <a class="panel-block">
           <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </span>
-          minireset.css
+          <div class="v3"></div>
         </a>
         <a class="panel-block">
           <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </span>
-          jgthms.github.io
+          <div class="v4"></div>
         </a>
       </article>
         <!-- Music Results -->
@@ -171,29 +207,29 @@
     <p class="panel-heading">
       Music Search Results
     </p>
-    <a class="panel-block">
+    <a class="panel-block" id="mResult">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fas fa-music" aria-hidden="true"></i>
       </span>
-      bulma
+      <div class="m1"></div>
     </a>
     <a class="panel-block">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fas fa-music" aria-hidden="true"></i>
       </span>
-      marksheet
+      <div class="m2"></div>
     </a>
     <a class="panel-block">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fas fa-music" aria-hidden="true"></i>
       </span>
-      minireset.css
+      <div class="m3"></div>
     </a>
     <a class="panel-block">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fas fa-music" aria-hidden="true"></i>
       </span>
-      jgthms.github.io
+      <div class="m4"></div>
     </a>
   </article>
   <!-- News Results -->
@@ -202,11 +238,12 @@
       News Search Results
     </p>
     <!-- remove is-active -->
-    <a class="panel-block" id="search-result">
+    <a class="panel-block" id="nResult">
       <span class="panel-icon">
         <i class="far fa-newspaper" aria-hidden="true"></i>
       </span>
       <div class="n1"></div>
+      <!-- <a href="http://opensource.org/licenses/mit-license.php">MIT</a> -->
     </a>
     <a class="panel-block">
       <span class="panel-icon">
@@ -219,8 +256,7 @@
             “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
           </p>
           <p class="subtitle"> -->
-            Jeff Atwood
-        </p>
+        
       </div>
     </a>
     <a class="panel-block">
@@ -235,16 +271,23 @@
       </span>
       <div class="n4"></div>
     </a>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="far fa-newspaper" aria-hidden="true"></i>
   </article>
 </div>
     </div>
-
+​
+​
+​
+​
 </section>
-
+​
   <!-- footer -->
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
+        <strong>Fusion Entertainment</strong> by Breana, Jon Kesler, & Nick
         <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
@@ -261,9 +304,10 @@
   <!-- google suggested for youTube -->
   <script src="https://apis.google.com/js/api.js"></script>
   <!-- add all 4 script files -->
-  <script src="./mScript.js"></script>
+
   <script src="./nScript.js"></script>
   <script src="./vScript.js"></script>
   <script src="./rScript.js"></script>
+  <script src="./mScript.js"></script>
   </body>
 </html>
