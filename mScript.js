@@ -2,7 +2,7 @@ var mArray = [];
 var mResult = document.querySelector("#mResult");
 
 function spotifySearch() {
-    var AUTH_TOKEN = "BQAY6_FOenKpwY35ZUxVlp7LpVvcEthGQWDjlC2dWzjtkk5feZ8WUNOPLHHKPvfd9hOEFiUKzYVrWZxUBVoVrVAlniKnVFKQUvM0t-h2Anvs6eo1kZHazJ1VCgRYWmPKnNA1mWs09wKypI08NQ";
+    var AUTH_TOKEN = "BQCJTsiTdRsOhsxX9_NLk__d_iaSGUf8JuznmUdeQ3HdigHVeDHRJmPyoUEWgBmVrP_TdMLIr9uuFf5TnrXyzsiUIbAGCi6sKSGqJnJ6JXrH3vsmyDCcNyc96BkAeYMYCoiznf7UAdU1RCP41Q";
     var searchTerm = "search-input"
     var searchType = "track"
     var queryUrl = "https://api.spotify.com/v1/search?q=" + searchTerm.value + "&type=" + searchType;
