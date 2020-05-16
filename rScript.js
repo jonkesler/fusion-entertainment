@@ -1,6 +1,6 @@
 // random News api call-called on page load
 // ============================================
-var rnUrl = 'http://newsapi.org/v2/top-headlines?' +
+var rnUrl = 'https://newsapi.org/v2/top-headlines?' +
           'country=us&' +
           'apiKey=' + nAPIkey;
 var req = new Request(rnUrl);
