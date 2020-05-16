@@ -1,4 +1,5 @@
-var vResult = document.querySelector("#vResult");
+<<<<<<< HEAD
+var nResult = document.querySelector("#search-result");
 var yapiKey = "AIzaSyDiFKZ__ewItVbTWGjSUu8AMCtowyAawyY"
 var yArray = [];
 
@@ -54,10 +55,6 @@ var yArray = [];
 //      document.getElementById('response').innerHTML = responseString;
 //     }
 
-
-
-
-
 //     // calls the function search
 $("#run-search").on("click", function (event) {
   event.preventDefault();
@@ -70,6 +67,47 @@ $("#run-search").on("click", function (event) {
   fetch(url)
   // .then(response => response.json())
   .then(function(response) {
+
+
+=======
+// Call JavaScript client library for youtube
+function onClientLoad() {
+    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+}
+// Called automatically when YouTube API interface is loaded
+function onYouTubeApiLoad() {
+    gapi.client.setApiKey('AIzaSyDiFKZ__ewItVbTWGjSUu8AMCtowyAawyY');
+}
+// Called when the search button is clicked in the html code
+function search() {
+    var query = document.getElementById('query').value;
+nScript
+    //  search.list() API call
+
+     var request = gapi.client.youtube.search.list({
+       part: 'snippet',
+       q:query
+    })
+function searchByKeyword() {
+    var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 15});
+    for(var i in results.items) {
+      var item = results.items[i];
+      Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+    }
+  }
+    // .then(function(response) {
+    //     console.log(response.json());
+nScript
+>>>>>>> master
+
+
+
+
+
+
+
+
+    
   return response.json();
   })
   .then(function(response) {
@@ -80,14 +118,14 @@ $("#run-search").on("click", function (event) {
   
     // .then(data) => {
    
-    vResult.innerHTML = "";
-    for (var k = 0; k < 5; k++) {
-      var vTitle = (yArray.items[k].snippet.title);
-      var vDesc = (yArray.items[k].snippet.description);
+    nResult.innerHTML = "";
+    for (var j = 0; j < 4; j++) {
+      var nTitle = (yArray.items[j].snippet.title);
+      var nDesc = (yArray.items[j].snippet.description);
       // var nrUrl = (yArray.articles[j].url);
-      console.log(vTitle + "vTitle");
+      console.log(nTitle + "nTitle");
       // console.log(nrUrl + " nrUrl");
-      $(".v" + (k + 1)).html(vTitle);
+      $(".n" + (j + 1)).html(nTitle);
 
       // document.querySelector(".youtubeVideo").src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
     // };

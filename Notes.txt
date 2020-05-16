@@ -25,4 +25,8 @@ https://random-ize.com/random-youtube/
 https://stackoverflow.com/questions/22128689/javascript-random-youtube-video-autoplay
 
 
+Webpage
 URL = https://jonkesler.github.io/fusion-entertainment/
+GitHub
+ssh = git@github.com:jonkesler/fusion-entertainment.git
+Https = https://github.com/jonkesler/fusion-entertainment.git
