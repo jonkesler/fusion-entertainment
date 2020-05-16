@@ -69,7 +69,7 @@ function init() {
     // keyword api search
     // ============================================
     // added n to url because it seemed to effect url in rscript
-        var nUrl = 'http://newsapi.org/v2/everything?' +
+        var nUrl = 'https://newsapi.org/v2/everything?' +
         // populate q with search term
         'q=' + searchInput.value + '&' +
         // populate from with current month
