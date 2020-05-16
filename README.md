@@ -1,7 +1,7 @@
 # fusion-entertainment
 Our first project
 
-# Oor First Project
+# Our First Project
 
 We collaboratively worked together to create a website that pulls and integrates data
 received from multiple server-side API request. We worked along the lines of agile
