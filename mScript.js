@@ -24,9 +24,9 @@ function spotifySearch() {
             // Writes results to html
              mResult.innerHTML = "";
             for (var l = 0; l < 5; l++) {
-                var mTitle = (mArray.tracks.items[j].album.name);
-                var mDesc = (mArray.tracks.items[j].album.release_date);
-                var mrUrl = (mArray.tracks.items[j].href);
+                var mTitle = (mArray.tracks.items[l].album.name);
+                var mDesc = (mArray.tracks.items[l].album.release_date);
+                var mrUrl = (mArray.tracks.items[l].href);
                 console.log(mTitle + "mTitle");
                 $(".m" + (l + 1)).html(mTitle);
                 
